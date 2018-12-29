@@ -1,1 +1,36 @@
 come!!!!!!!!!!!!!!!!!
+<!DOCTYPE html>
+<html>
+<head>
+	<title>猫捉老鼠</title>
+<script type="text/javascript">
+	var cat = {
+		name:'Jack',
+		legBroken:true,
+		catch:function () {
+			if (this.legBroken) {
+				alert(this.name+"说：我不能抓老鼠！");
+			} else {
+				alert(this.name+"说：我现在能抓老鼠了！");
+			}
+			mouse.shout();
+  }		
+}
+    var mouse = {
+    	name:'Tom',
+    	shout:function () {
+    	if (cat.legBroken) {
+    		alert(this.name+"说：来啊，抓我啊（滑稽）");
+    	} else {
+    		alert(this.name+"说：欧上帝，救我啊");
+    	}
+    	}
+    }
+
+</script>
+</head>
+<body>
+<button onclick="cat.catch()">去捉老鼠</button>
+<button onclick="cat.legBroken=false">修复猫腿</button>
+</body>
+</html>
