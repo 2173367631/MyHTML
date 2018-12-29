@@ -1,37 +1,90 @@
-come!!!!!!!!!!!!!!!!!
 <!DOCTYPE html>
 <html>
 <head>
-	<title>猫捉老鼠</title>
-<script type="text/javascript">
-	var cat = {
-		name:'Jack',
-		legBroken:true,
-		catch:function () {
-			if (this.legBroken) {
-				alert(this.name+"说：我不能抓老鼠！");
+	<title>猜拳</title>
+	<script type="text/javascript">
+		var useChoice=prompt("请输入石头、剪刀、布");
+		var computerChoice=Math.random();
+		if (computerChoice<1/3) {
+			computerChoice="石头";
+		} else {
+			if (computerChoice<=2/3) {
+				computerChoice="布";
 			} else {
-				alert(this.name+"说：我现在能抓老鼠了！");
+				computerChoice="剪刀";
 			}
-			mouse.shout();
-  }		
-}
-    var mouse = {
-    	name:'Tom',
-    	shout:function () {
-    	if (cat.legBroken) {
-    		alert(this.name+"说：来啊，抓我啊（滑稽）");
-    	} else {
-    		alert(this.name+"说：欧上帝，救我啊");
-    	}
-    	}
-    }
+		}
+		document.write("电脑随机："+computerChoice+"<br><br>");
+		function compare(choice1,choice2){
+           if (choice1===choice2) {
+           	   return "平局";
+           } else {if (choice1==="石头") {
+           	  if (choice2==="布") {
+           	  	return "石头 赢";
+           	  } else {
+           	  	return "布 赢";
+           	  }
+           } else {
+           	if (choice1==="布") {
+           		if (choice2==="石头") {
+           			return "布 赢";
+           		} else {
+           			return "剪刀 赢";
+           		}
+           	} else {
+           		if (choice1==="剪刀") {
+           			if (choice2==="石头") {
+           				return "石头 赢";
+           			} else {
+           				return "剪刀 赢";
+           			}
+           		} 
+           	}
+           }}
+		}
+		document.write(compare(useChoice,computerChoice));
+	</script>
+	
+</head>
+<body>
 
+</body>
+</html>
+
+2、猜数字：
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>猜数字</title>
+<script>
+//网页加载时直接生成随机数，
+var ran=parseInt(Math.random()*100);
+function guess() {
+//获取文本框里的值
+var input=document.getElementById("num");
+var n=input.value;
+var span=document.getElementById("result");
+//判断该值是否为数字
+if(isNaN(n)){
+span.innerHTML="请输入数字"; 
+}else {
+//比较
+if(n<ran){
+span.innerHTML="小了";
+}else if (n>ran) {
+span.innerHTML="大了";
+}else{
+span.innerHTML="对了";
+}
+}
+}
 </script>
 </head>
 <body>
-<img scr="20168101470808109863_39.jpg">
-<button onclick="cat.catch()">去捉老鼠</button>
-<button onclick="cat.legBroken=false">修复猫腿</button>
+<input type="text" id="num">
+<input type="button" value="猜"
+onclick="guess();">
+<span id="result"></span>
 </body>
-</html>
+</html>   
