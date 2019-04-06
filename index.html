@@ -1,51 +1,15 @@
-<!DOCTYPE html>
+<!Doctype html>
+
 <html>
 <head>
-	<title>猜拳</title>
-	<script type="text/javascript">
-		var useChoice=prompt("请输入石头、剪刀、布");
-		var computerChoice=Math.random();
-		if (computerChoice<1/3) {
-			computerChoice="石头";
-		} else {
-			if (computerChoice<=2/3) {
-				computerChoice="布";
-			} else {
-				computerChoice="剪刀";
-			}
-		}
-		document.write("电脑随机："+computerChoice+"<br><br>");
-		function compare(choice1,choice2){
-           if (choice1===choice2) {
-           	   return "平局";
-           } else {if (choice1==="石头") {
-           	  if (choice2==="布") {
-           	  	return "石头 赢";
-           	  } else {
-           	  	return "布 赢";
-           	  }
-           } else {
-           	if (choice1==="布") {
-           		if (choice2==="石头") {
-           			return "布 赢";
-           		} else {
-           			return "剪刀 赢";
-           		}
-           	} else {
-           		if (choice1==="剪刀") {
-           			if (choice2==="石头") {
-           				return "石头 赢";
-           			} else {
-           				return "剪刀 赢";
-           			}
-           		} 
-           	}
-           }}
-		}
-		document.write(compare(useChoice,computerChoice));
+	<title>链接大全</title>
+	<script>
+		alert("Made by Mr.Rannn");
 	</script>
-	
 </head>
 <body>
+	<a href="https://www.baidu.com" target="_blank">百度网址</a> <br />
+	<a href="https://fanyi.baidu.com/" target="_blank">百度翻译</a> <br />
+	
 </body>
 </html>
